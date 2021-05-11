@@ -33,12 +33,12 @@ const App = () => {
         - otherwise just return the post object unchanged.
      */
     setPosts(posts.map(post => {
-      if (post.id === postId){
-        return {...post, likes: (post.likes + 1)};
-      } else {
-        return post;
-      }
+      return (post.id === postId) ? {...post, likes: (post.likes + 1)} : post;
     }));
+  };
+
+  const searchUpdate = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   const searchFilter = () => {
@@ -49,12 +49,7 @@ const App = () => {
 
   const addComment = (comment, postId) => {
     const newPosts = posts.map(post => {
-      if (post.id === postId){
-        const newComments = [...post.comments, comment];
-        return {...post, comments: newComments};
-      } else {
-        return post;
-      }
+      return (post.id === postId) ? {...post, comments: [...post.comments, comment]} : post;
     });
     setPosts(newPosts);
   };
@@ -63,7 +58,7 @@ const App = () => {
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       {/* Check the implementation of each component, to see what props they require, if any! */}
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+      <SearchBar update={searchUpdate}/>
       <Posts likePost={likePost} posts={searchFilter()} addComment={addComment}/>
     </div>
   );

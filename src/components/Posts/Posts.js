@@ -2,9 +2,8 @@ import React from 'react';
 import Post from './Post';
 import './Posts.css';
 
-const Posts = (props) => {
+const Posts = ({likePost, posts, addComment}) => {
   // 🔥 Make sure the parent of Posts is passing the right props!
-  const { likePost, posts, addComment } = props;
 
   return (
     <div className='posts-container-wrapper'>

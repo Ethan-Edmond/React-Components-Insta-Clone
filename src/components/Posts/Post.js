@@ -3,9 +3,8 @@ import Comments from '../Comments/Comments';
 import LikeSection from './LikeSection';
 import PostHeader from './PostHeader';
 
-const Post = props => {
+const Post = ({post, likePost, addCommentFun}) => {
   // 🔥 Make sure the parent of Post is passing the right props!
-  const { post, likePost, addCommentFun} = props;
 
   const addComment = (comment) => {
     addCommentFun({
