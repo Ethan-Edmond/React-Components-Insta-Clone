@@ -58,7 +58,7 @@ const dummyData = [
 
 for (let i = 0; i < 45; i++){
   dummyData.push({
-    id: (i + 2),
+    id: (i + 3),
     username: "Ethan",
     thumbnailUrl: dummyData[0].thumbnailUrl,
     imageUrl: dummyData[0].imageUrl,
