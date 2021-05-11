@@ -20,6 +20,7 @@ const App = () => {
   const [posts, setPosts] = useState(dummyData);
   const [searchTerm, setSearchTerm] = useState("");
 
+  console.log(posts);
   const likePost = postId => {
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -32,12 +33,21 @@ const App = () => {
         - if the `id` of the post matches `postId`, return a new post object with the desired values (use the spread operator).
         - otherwise just return the post object unchanged.
      */
+    setPosts(posts.map(post => {
+      if (post.id === postId){
+        return {...post, likes: (post.likes + 1)};
+      } else {
+        return post;
+      }
+    }));
   };
 
   return (
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       {/* Check the implementation of each component, to see what props they require, if any! */}
+      <SearchBar />
+      <Posts />
     </div>
   );
 };
