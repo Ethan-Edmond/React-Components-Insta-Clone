@@ -56,4 +56,15 @@ const dummyData = [
     },
 ];
 
+for (let i = 0; i < 45; i++){
+  dummyData.push({
+    id: (i + 2),
+    username: "Ethan",
+    thumbnailUrl: dummyData[0].thumbnailUrl,
+    imageUrl: dummyData[0].imageUrl,
+    likes: (i * 100),
+    timestamp: "Now",
+    comments: []
+  });
+}
 export default dummyData;
