@@ -41,12 +41,30 @@ const App = () => {
     }));
   };
 
+  const searchFilter = () => {
+    return posts.filter(post => {
+      return post.username.includes(searchTerm);
+    });
+  };
+
+  const addComment = (comment, postId) => {
+    const newPosts = posts.map(post => {
+      if (post.id === postId){
+        const newComments = [...post.comments, comment];
+        return {...post, comments: newComments};
+      } else {
+        return post;
+      }
+    });
+    setPosts(newPosts);
+  };
+
   return (
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       {/* Check the implementation of each component, to see what props they require, if any! */}
-      <SearchBar />
-      <Posts likePost={likePost} posts={posts}/>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+      <Posts likePost={likePost} posts={searchFilter()} addComment={addComment}/>
     </div>
   );
 };
