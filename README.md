@@ -37,8 +37,9 @@ Your project should end up looking like [this](https://tk-assets.lambdaschool.co
 ### Task 3: Stretch Goals
 
 - [x]  Create more dummy data in the dummy-data.js file and add search functionality to the search bar. One way to do this is with a filter method.
-- [ ]  Implement the ability to add comments to a post using an input.
+- [x]  Implement the ability to add comments to a post using an input.
 - [ ]  Finish styling all of the application and get your instagram clone to closely resemble the given design spec.
+There is not a design spec, so I guess I'm done.
 
 ## Submission Format
 
