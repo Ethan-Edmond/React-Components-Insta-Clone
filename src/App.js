@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Posts from "./components/Posts/Posts";
 import SearchBar from "./components/SearchBar/SearchBar";
+import dummyData from "./dummy-data";
 
 const App = () => {
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
